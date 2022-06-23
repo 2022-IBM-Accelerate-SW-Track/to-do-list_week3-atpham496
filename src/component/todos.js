@@ -13,7 +13,9 @@ const Todos = ({ todos, deleteTodo }) => {
   const todoList = todos.length ? (
     todos.map((todo) => {
       let color = "white";
-      if (new Date(todo.due) < new Date()) {
+      
+      // overdue tasks
+      if (new Date(todo.due) <= new Date()) {
         color = "red";
       }
 
